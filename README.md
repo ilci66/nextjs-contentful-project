@@ -1,0 +1,1 @@
+* Using Contentful with this project
