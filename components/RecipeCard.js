@@ -7,11 +7,13 @@ export default function RecipeCard({ recipe }) {
   return (
     <div className="card">
       <div className="featured">
-      <Image 
-          src={'https:' + thumbnail.fields.file.url}
-          width={thumbnail.fields.file.details.image.width}
-          height={thumbnail.fields.file.details.image.height}
-        />
+        {/* had to whitelist the source to be able to use images from "images.ctfassets.net" */}
+        {/* I could have used imeges better suited for this but as it is for learning purposes, these will do */}
+        <Image 
+            src={'https:' + thumbnail.fields.file.url}
+            width={thumbnail.fields.file.details.image.width}
+            height={thumbnail.fields.file.details.image.height}
+            />
       </div>
       <div className="content">
         <div className="info">
