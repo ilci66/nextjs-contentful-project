@@ -81,22 +81,9 @@ export default function RecipeDetails({ recipe }) {
         <h3>Method:</h3>
         <div className="rich-text">{documentToReactComponents(method)}</div>
       </div>
-      <p>Laborum dolore ex sint deserunt ad sunt ullamco pariatur amet cillum. Ut sint nisi incididunt Lorem et irure pariatur. Magna officia duis enim quis adipisicing deserunt cillum ut. Velit labore dolor excepteur sint ut anim aute Lorem. Non irure nisi sunt cupidatat voluptate dolor ea est do ad sint aute. Exercitation eiusmod eu tempor sit dolore.
-
-
-Quis commodo eu laborum velit laboris cupidatat aliquip elit. Non laborum adipisicing excepteur laboris. Elit ut irure qui aliquip. Nostrud ut cupidatat veniam proident occaecat eiusmod sunt magna officia amet. Ad qui laboris dolor occaecat do ut ex. Laborum eiusmod sit sunt quis nulla minim.
-
-
-Qui et voluptate magna nulla cupidatat eu aliquip id mollit qui incididunt excepteur cillum ex. Quis excepteur cillum pariatur elit dolore laboris adipisicing est nulla. Id nisi laborum deserunt officia amet aliquip tempor ad reprehenderit ea ullamco non.
-
-
-Dolor eiusmod reprehenderit in exercitation anim. Eu non laborum ipsum aliqua sit fugiat aute. Sunt eu amet nisi laboris ea sit. Non sit culpa voluptate tempor quis nostrud.</p>
       <style jsx>{`
         h2,h3 {
           text-transform: uppercase;
-        }
-        .method {
-          word-wrap: normal;
         }
         .banner h2 {
           margin: 0;
