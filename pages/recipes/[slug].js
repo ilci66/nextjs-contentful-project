@@ -95,13 +95,16 @@ export default function RecipeDetails({ recipe }) {
           transform: rotateZ(-1deg);
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
         }
+        .method {
+          width:90vw;
+          word-wrap: break-word;
+        }
         .info p {
           margin: 0;
         }
         .info span::after {
           content: ", ";
         }
-        
         .info span:last-child::after {
           content: ".";
         }
