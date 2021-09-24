@@ -2,6 +2,7 @@ import { createClient } from 'contentful'
 // this one is necessary to render rich text
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Image from 'next/image'
+import Skeleton from '../../components/Skeleton';
 // need to create a connection again
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -25,8 +26,8 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    // if a page doesn't exist it will show a 404 page
-    fallback: false
+    // created a fallback page, so gonna show that while the page is being built
+    fallback: true
   }
 }
 
@@ -56,6 +57,9 @@ export const getStaticProps = async ({ params }) => {
 }
 // using the props.recipe here to render the page, finally
 export default function RecipeDetails({ recipe }) {
+  // until there's data to create the page with, return fallback page
+  if (!recipe) return <Skeleton />
+
   const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields
   // console.log(method)
 
