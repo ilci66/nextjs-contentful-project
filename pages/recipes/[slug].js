@@ -44,7 +44,13 @@ export const getStaticProps = async ({ params }) => {
   })
 
   return {
-    props: { recipe: items[0] }
+    props: { recipe: items[0] },
+    // how often, at most, next.js should check for content updates, after the first refresh it appears
+    // or you can say after the first visit, it notices the update and for the visits after that initial one
+    // updates the content automatically
+    // only after the waiting time below is reached it tries to check the content
+    // just setting 1 for the tutorial it could be a lot longer than that 
+    revalidate: 1,
   }
 
 }
