@@ -44,6 +44,17 @@ export const getStaticProps = async ({ params }) => {
     'fields.slug': params.slug
   })
 
+  // if there is no item it means there's no data so redirecting the users
+  // permanent value is false because I might have a value there in the future
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  };
+
   return {
     props: { recipe: items[0] },
     // how often, at most, next.js should check for content updates, after the first refresh it appears
@@ -59,6 +70,7 @@ export const getStaticProps = async ({ params }) => {
 export default function RecipeDetails({ recipe }) {
   // until there's data to create the page with, return fallback page
   if (!recipe) return <Skeleton />
+  
 
   const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields
   // console.log(method)
