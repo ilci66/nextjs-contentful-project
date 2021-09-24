@@ -58,8 +58,10 @@ export default function RecipeDetails({ recipe }) {
   return (
     <div>
       <div className="banner">
+        {/* url properties don't have the https in front be careful with that */}
         <Image 
           src={'https:' + featuredImage.fields.file.url}
+          // leaving these here like that instead of stretching the image to remind myself this is possible this way
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
         />
@@ -69,7 +71,7 @@ export default function RecipeDetails({ recipe }) {
       <div className="info">
         <p>Takes about { cookingTime } mins to cook.</p>
         <h3>Ingredients:</h3>
-
+        {/* ingredients is an array */}
         {ingredients.map(ing => (
           <span key={ing}>{ ing }</span>
         ))}
@@ -77,12 +79,24 @@ export default function RecipeDetails({ recipe }) {
         
       <div className="method">
         <h3>Method:</h3>
-        <div>{documentToReactComponents(method)}</div>
+        <div className="rich-text">{documentToReactComponents(method)}</div>
       </div>
+      <p>Laborum dolore ex sint deserunt ad sunt ullamco pariatur amet cillum. Ut sint nisi incididunt Lorem et irure pariatur. Magna officia duis enim quis adipisicing deserunt cillum ut. Velit labore dolor excepteur sint ut anim aute Lorem. Non irure nisi sunt cupidatat voluptate dolor ea est do ad sint aute. Exercitation eiusmod eu tempor sit dolore.
 
+
+Quis commodo eu laborum velit laboris cupidatat aliquip elit. Non laborum adipisicing excepteur laboris. Elit ut irure qui aliquip. Nostrud ut cupidatat veniam proident occaecat eiusmod sunt magna officia amet. Ad qui laboris dolor occaecat do ut ex. Laborum eiusmod sit sunt quis nulla minim.
+
+
+Qui et voluptate magna nulla cupidatat eu aliquip id mollit qui incididunt excepteur cillum ex. Quis excepteur cillum pariatur elit dolore laboris adipisicing est nulla. Id nisi laborum deserunt officia amet aliquip tempor ad reprehenderit ea ullamco non.
+
+
+Dolor eiusmod reprehenderit in exercitation anim. Eu non laborum ipsum aliqua sit fugiat aute. Sunt eu amet nisi laboris ea sit. Non sit culpa voluptate tempor quis nostrud.</p>
       <style jsx>{`
         h2,h3 {
           text-transform: uppercase;
+        }
+        .method {
+          word-wrap: normal;
         }
         .banner h2 {
           margin: 0;
@@ -94,10 +108,6 @@ export default function RecipeDetails({ recipe }) {
           left: -10px;
           transform: rotateZ(-1deg);
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-        }
-        .method {
-          width:90vw;
-          word-wrap: break-word;
         }
         .info p {
           margin: 0;
